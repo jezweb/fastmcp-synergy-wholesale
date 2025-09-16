@@ -164,7 +164,7 @@ def determine_domain_renewable(
     Returns:
         Dictionary with renewal status and expiry information
     """
-    return base.safe_soap_call("determineDomainIsRenewable", {"domainName": domain_name}, reseller_id, api_key)
+    return base.safe_soap_call("canRenewDomain", {"domainName": domain_name}, reseller_id, api_key)
 
 # ============================================================================
 # DOMAIN REGISTRATION TOOLS
@@ -231,7 +231,7 @@ def register_domain(
     if eligibility_fields:
         params["eligibilityFields"] = eligibility_fields
 
-    return base.safe_soap_call("registerDomain", params, reseller_id, api_key)
+    return base.safe_soap_call("domainRegister", params, reseller_id, api_key)
 
 @mcp.tool()
 def bulk_register_domain(

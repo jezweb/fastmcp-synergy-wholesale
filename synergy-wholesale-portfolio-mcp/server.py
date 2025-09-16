@@ -136,7 +136,7 @@ def update_nameservers(
     if len(nameservers) < 2 or len(nameservers) > 6:
         return {"error": "Must provide between 2 and 6 nameservers"}
 
-    return base.safe_soap_call("updateNameServers", {
+    return base.safe_soap_call("updateName", {
         "domainName": domain_name,
         "nameServers": nameservers
     }, reseller_id, api_key)
@@ -386,7 +386,7 @@ def update_contacts(
     if len(params) == 1:  # Only domain name provided
         return {"error": "At least one contact must be provided for update"}
 
-    return base.safe_soap_call("updateContacts", params, reseller_id, api_key)
+    return base.safe_soap_call("updateContact", params, reseller_id, api_key)
 
 @mcp.tool()
 def list_contacts(
@@ -424,7 +424,7 @@ def get_raw_contacts(
     Returns:
         Dictionary with detailed contact information
     """
-    return base.safe_soap_call("getRawContacts", {"domainName": domain_name}, reseller_id, api_key)
+    return base.safe_soap_call("rawDomainContacts", {"domainName": domain_name}, reseller_id, api_key)
 
 @mcp.tool()
 def list_id_protected_contacts(
@@ -462,7 +462,7 @@ def resend_registrant_email(
     Returns:
         Dictionary with email send result
     """
-    return base.safe_soap_call("resendRegistrantUpdateEmail", {"domainName": domain_name}, reseller_id, api_key)
+    return base.safe_soap_call("resendChangeOfRegistrantEmails", {"domainName": domain_name}, reseller_id, api_key)
 
 @mcp.tool()
 def cancel_pending_registrant_update(

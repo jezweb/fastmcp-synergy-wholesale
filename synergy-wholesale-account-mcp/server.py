@@ -147,7 +147,7 @@ def domain_renew_required_check(
     Returns:
         Dictionary with list of domains requiring renewal
     """
-    return base.safe_soap_call("domainRenewRequiredCheck", {
+    return base.safe_soap_call("domainRenewRequired", {
         "daysAhead": days_ahead
     }, reseller_id, api_key)
 
@@ -168,7 +168,7 @@ def max_years_domain_renewable(
     Returns:
         Dictionary with maximum renewable years
     """
-    return base.safe_soap_call("maxYearsDomainCanBeRenewedFor", {
+    return base.safe_soap_call("getMaxYearsCanRenewFor", {
         "domainName": domain_name
     }, reseller_id, api_key)
 
@@ -193,7 +193,7 @@ def get_transfer_away_list(
     end_date = datetime.now()
     start_date = end_date - timedelta(days=days)
 
-    return base.safe_soap_call("getTransferAwayList", {
+    return base.safe_soap_call("getTransferredAwayDomains", {
         "startDate": start_date.strftime("%Y-%m-%d"),
         "endDate": end_date.strftime("%Y-%m-%d")
     }, reseller_id, api_key)
@@ -219,7 +219,7 @@ def resend_icann_verification(
     Returns:
         Dictionary with email send result
     """
-    return base.safe_soap_call("resendICANNRegistrantVerificationEmail", {
+    return base.safe_soap_call("resendVerificationEmail", {
         "domainName": domain_name
     }, reseller_id, api_key)
 

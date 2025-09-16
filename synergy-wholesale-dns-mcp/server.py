@@ -299,7 +299,7 @@ def add_email_forward(
     if "@" not in source_email:
         source_email = f"{source_email}@{domain_name}"
 
-    return base.safe_soap_call("addEmailForward", {
+    return base.safe_soap_call("addMailForward", {
         "domainName": domain_name,
         "sourceEmail": source_email,
         "destinationEmail": destination_email
@@ -328,7 +328,7 @@ def delete_email_forward(
     if "@" not in source_email:
         source_email = f"{source_email}@{domain_name}"
 
-    return base.safe_soap_call("deleteEmailForward", {
+    return base.safe_soap_call("deleteMailForward", {
         "domainName": domain_name,
         "sourceEmail": source_email
     }, reseller_id, api_key)
@@ -350,7 +350,7 @@ def list_email_forwards(
     Returns:
         Dictionary with list of email forwarding rules
     """
-    return base.safe_soap_call("listEmailForwards", {"domainName": domain_name}, reseller_id, api_key)
+    return base.safe_soap_call("listMailForwards", {"domainName": domain_name}, reseller_id, api_key)
 
 # ============================================================================
 # URL FORWARDING

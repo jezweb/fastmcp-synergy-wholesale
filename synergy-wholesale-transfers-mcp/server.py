@@ -170,7 +170,7 @@ def resend_transfer_email(
     Returns:
         Dictionary with email send result
     """
-    return base.safe_soap_call("resendTransferApprovalEmail", {
+    return base.safe_soap_call("resendTransferEmail", {
         "domainName": domain_name
     }, reseller_id, api_key)
 
