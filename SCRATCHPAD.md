@@ -6,7 +6,12 @@
 - [x] Server 1: Discovery & Registration (8 tools) ✅
 
 ## In Progress
-Building Server 2: Domain Portfolio Management
+Building Server 4: DNS & Routing Management
+
+## Completed
+- [x] Server 1: Discovery & Registration (8 tools) ✅
+- [x] Server 2: Portfolio Management (18 tools) ✅
+- [x] Server 3: Transfers (10 tools) ✅
 
 ## Servers Remaining
 - [ ] Server 2: Portfolio Management (16 tools)
